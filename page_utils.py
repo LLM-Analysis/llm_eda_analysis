@@ -81,6 +81,8 @@ def explain_chart(data, explainer, container = st):
             st.markdown(prompt)
 
         with st.chat_message("Assistant"):
+            markdown(f"<p style = 'font-size: 20px; margin-bottom: 0px'><strong>Assistant</strong></p>")
+            
             try:
                 msg = st.empty()
     
