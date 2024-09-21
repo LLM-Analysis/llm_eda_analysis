@@ -69,7 +69,8 @@ if file is not None:
                 my_bar.progress(50, text = "Generating charts")
 
             except Exception as e:
-                del st.session_state["chart_response"]
+                if "chart_response" in st.session_state:
+                    del st.session_state["chart_response"]
     
                 st.session_state['re-attempt'] += 1
                 st.session_state["progress_text"] = {"val": 50, 
@@ -87,5 +88,6 @@ if file is not None:
                         The system will analyze the first {n_rows} rows.""")
             
             explain_chart(prompt, explainer)
-
+            
+            st.session_state["progress_text"] = {"val": 0, "text": "Analyzing the dataset"}
             st.session_state['re-attempt'] = 0
