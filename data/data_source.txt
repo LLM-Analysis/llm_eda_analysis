@@ -1,0 +1,2 @@
+https://www.kaggle.com/datasets/pavansubhasht/ibm-hr-analytics-attrition-dataset
+https://www.kaggle.com/datasets/rawaneid/microsoft-stock-market-2001-2021
