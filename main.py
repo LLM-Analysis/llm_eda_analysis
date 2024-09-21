@@ -73,8 +73,8 @@ if file is not None:
                     del st.session_state["chart_response"]
                 
                 st.session_state['re-attempt'] += 1
-                st.session_state["progress_text"] = {"val": 50, "text": e}
-                                                    #  "text": f"{st.session_state['re-attempt']} attempt(s) to regenerate the charts"}
+                st.session_state["progress_text"] = {"val": 50, 
+                                                     "text": f"{st.session_state['re-attempt']} attempt(s) to regenerate the charts"}
 
                 st.rerun()
 
