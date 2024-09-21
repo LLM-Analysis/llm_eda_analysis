@@ -71,10 +71,10 @@ if file is not None:
             except Exception as e:
                 if "chart_response" in st.session_state:
                     del st.session_state["chart_response"]
-                print(e)
+                
                 st.session_state['re-attempt'] += 1
-                st.session_state["progress_text"] = {"val": 50, 
-                                                     "text": f"{st.session_state['re-attempt']} attempt(s) to regenerate the charts"}
+                st.session_state["progress_text"] = {"val": 50, "text": e}
+                                                    #  "text": f"{st.session_state['re-attempt']} attempt(s) to regenerate the charts"}
 
                 st.rerun()
 
