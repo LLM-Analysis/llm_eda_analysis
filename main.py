@@ -5,6 +5,7 @@ from page_utils import *
 from backend_utils import *
 
 st.set_page_config(layout = "wide")
+markdown("<h3>Exploratory Data Analysis with Generative AI</h3>")
 
 init_page_css()
 
@@ -22,8 +23,6 @@ if file is not None:
 
     data = pd.read_csv(file)
     api_key = st.sidebar.text_input("API Key")
-    
-    markdown("<h3>Exploratory Data Analysis with Generative AI</h3>")
 
     if api_key == "":
         st.info("Enter your API Key to continue.")
@@ -91,3 +90,6 @@ if file is not None:
             
             st.session_state["progress_text"] = {"val": 0, "text": "Analyzing the dataset"}
             st.session_state['re-attempt'] = 0
+
+else:
+    st.info("Upload your CSV to continue.")
